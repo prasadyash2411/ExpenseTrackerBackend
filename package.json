@@ -1,0 +1,30 @@
+{
+  "name": "backend_expense_tracker",
+  "version": "1.0.0",
+  "description": "\"Expense Tracker backend\"",
+  "main": "app.js",
+  "author": "Yash",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "mysql2": "^1.6.1",
+    "pug": "^2.0.3",
+    "sequelize": "^6.6.2"
+  }
+}
