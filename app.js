@@ -28,6 +28,10 @@ app.use(cors());
 // app.use(bodyParser.urlencoded());  ////this is for handling forms
 app.use(express.json());  //this is for handling jsons
 
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "Login/login.html"));
+  });
+
 app.use('/user', userRoutes)
 
 
