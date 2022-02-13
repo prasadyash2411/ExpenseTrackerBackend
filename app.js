@@ -2,6 +2,10 @@ const path = require('path');
 
 const express = require('express');
 var cors = require('cors')
+const dotenv = require('dotenv');
+
+// get config vars
+dotenv.config(); //when process env gets defined
 
 const sequelize = require('./util/database');
 const User = require('./models/users');
@@ -17,10 +21,7 @@ const purchaseRoutes = require('./routes/purchase')
 const resetPasswordRoutes = require('./routes/resetpassword')
 
 const app = express();
-const dotenv = require('dotenv');
 
-// get config vars
-dotenv.config();
 
 
 app.use(cors());
@@ -45,7 +46,7 @@ Order.belongsTo(User);
 
 User.hasMany(Forgotpassword);
 Forgotpassword.belongsTo(User);
-
+// console.log(process.env)
 sequelize.sync()
     .then(() => {
         app.listen(3000);
