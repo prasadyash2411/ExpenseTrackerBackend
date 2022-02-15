@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="addNewExpense(event)">
+        <label for="expenseamount">Choose expenseamount:</label>
+        <input type="number" name="expenseamount" required> </input>
+        <label for="description">Choose description:</label>
+        <input type="text" name="description" required> </input>
+        <label for="category">Choose a category:</label>
+        <select id="category" name="category">
+            <option value="fuel">fuel</option>
+            <option value="food">food</option>
+            <option value="electricity">electricity</option>
+            <option value="Movie">Movie</option>
+        </select>
+        <button>Add Expense</button>
+    </form>
+    <ul id='listOfExpenses'>
+
+    </ul>
+    <button id="rzp-button1">Buy Premium</button>
+    <button onclick="download()" id="downloadexpense">Download File</button>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src='./index.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
