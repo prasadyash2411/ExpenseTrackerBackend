@@ -38,7 +38,6 @@ app.use('/password', resetPasswordRoutes);
 
 app.use((req, res) => {
     console.log('urlll', req.url);
-    console.log('request has arrived and it is about complete');
     res.sendFile(path.join(__dirname, `public/${req.url}`));
 })
 
