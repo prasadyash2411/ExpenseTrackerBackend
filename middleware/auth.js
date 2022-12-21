@@ -4,14 +4,15 @@ const User = require('../models/users');
 const authenticate = (req, res, next) => {
 
     try {
-        const token = req.header('authorization');
+        const token = req.header('Authorization');
         console.log(token);
-        const userid = Number(jwt.verify(token, process.env.TOKEN_SECRET));
-        User.findByPk(userid).then(user => {
-            console.log(JSON.stringify(user));
-            req.user = user;
+        const user = jwt.verify(token, 'secretkey');
+        console.log('userID >>>> ', user.userId)
+        User.findByPk(user.userId).then(user => {
+
+            req.user = user; ///ver
             next();
-        }).catch(err => { throw new Error(err)})
+        })
 
       } catch(err) {
         console.log(err);
